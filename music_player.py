@@ -73,13 +73,14 @@ def main(page: ft.Page):
     resume_button = ft.Button(content = "▶", on_click = resume)
     next_song_button = ft.Button(content = "▶I", on_click = next_song)
     previous_song_button = ft.Button(content = "I◀", on_click = previous_song)
+    volume_slider = ft.Slider(min = 0, max = 100, divisions = 100, label = "Volume")
 
     track_info_text = ft.Text(f'Track {track_number + 1}: "{builtin_tracks[track_number]["title"]}" from {builtin_tracks[track_number]["artist"]}')
 
     page.add(
         track_info_text,
         ft.Row(
-            controls = [previous_song_button, resume_button, pause_button, stop_button, next_song_button],
+            controls = [previous_song_button, resume_button, pause_button, stop_button, next_song_button, volume_slider],
             alignment = page.horizontal_alignment
         )
     )
