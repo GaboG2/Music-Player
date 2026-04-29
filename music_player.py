@@ -36,7 +36,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Row(
-            controls = [play_button, resume_button, pause_button, next_song_button, previous_song_button],
+            controls = [previous_song_button, play_button, resume_button, pause_button, next_song_button],
             alignment = page.horizontal_alignment
         )
     )
