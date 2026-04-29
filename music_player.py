@@ -3,7 +3,8 @@ import flet_audio as fta
 
 def main(page: ft.Page):
     def play_pause(e):
-        pass
+        if True:
+            pass
     
     def next_song(e):
         pass
