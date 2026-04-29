@@ -11,7 +11,7 @@ builtin_tracks = [
 def main(page: ft.Page):
     track_number = 0
 
-    async def play(e):
+    async def stop(e):
         await music.seek(0)
         await music.pause()
     
@@ -48,7 +48,7 @@ def main(page: ft.Page):
     
     music = fta.Audio(src = builtin_tracks[track_number]["src"])
 
-    stop_button = ft.Button(content = "■", on_click = play)
+    stop_button = ft.Button(content = "■", on_click = stop)
     pause_button = ft.Button(content = "II", on_click = pause)
     resume_button = ft.Button(content = "▶", on_click = resume)
     next_song_button = ft.Button(content = "▶I", on_click = next_song)
@@ -59,7 +59,7 @@ def main(page: ft.Page):
     page.add(
         track_info_text,
         ft.Row(
-            controls = [previous_song_button, stop_button, resume_button, pause_button, next_song_button],
+            controls = [previous_song_button, resume_button, pause_button, stop_button, next_song_button],
             alignment = page.horizontal_alignment
         )
     )
