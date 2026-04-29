@@ -63,6 +63,9 @@ def main(page: ft.Page):
         music.src = builtin_tracks[track_number]["src"]
         track_info_text.value = f'Track {track_number + 1}: "{builtin_tracks[track_number]["title"]}" from {builtin_tracks[track_number]["artist"]}'
 
+    def change_volume(e):
+        music.volume = volume_slider.value
+
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     
@@ -73,7 +76,7 @@ def main(page: ft.Page):
     resume_button = ft.Button(content = "▶", on_click = resume)
     next_song_button = ft.Button(content = "▶I", on_click = next_song)
     previous_song_button = ft.Button(content = "I◀", on_click = previous_song)
-    volume_slider = ft.Slider(min = 0, max = 100, divisions = 100, label = "Volume")
+    volume_slider = ft.Slider(min = 0, max = 1, divisions = 100, label = "Volume", on_change = change_volume)
 
     track_info_text = ft.Text(f'Track {track_number + 1}: "{builtin_tracks[track_number]["title"]}" from {builtin_tracks[track_number]["artist"]}')
 
